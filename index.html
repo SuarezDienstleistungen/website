@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Suarez Dienstleistungen | Reinigung in Meißen & Dresden</title>
   <meta name="description" content="Professionelle Reinigung, Hausmeisterservice und zuverlässiger Service für Privatkunden, Unternehmen und Ferienwohnungen in Meißen, Dresden und Umgebung.">
+  <meta property="og:title" content="Suarez Dienstleistungen | Reinigung in Meißen & Dresden">
+  <meta property="og:description" content="Professionelle Reinigung, Hausmeisterservice und zuverlässiger Service in Meißen, Dresden und Umgebung.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/hero-cleaning.jpg">
+  <meta name="theme-color" content="#080808">
+  <link rel="icon" href="assets/sd-logo.jpg">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,7 +30,7 @@
       <a href="#kontakt">Kontakt</a>
       <a class="cta" href="#kontakt">Angebot anfordern</a>
     </nav>
-    <div class="mobile-toggle">☰</div>
+    <button class="mobile-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -162,7 +168,7 @@
         </label>
 
         <button class="cta form-submit" type="submit">Nachricht senden</button>
-        <small class="form-note">Beim Senden öffnet sich Ihr E-Mail-Programm. Für die endgültige Online-Version verbinden wir das Formular direkt mit Ihrem Postfach.</small>
+        <small class="form-note">Beim Senden öffnet sich Ihr E-Mail-Programm mit Ihrer vorbereiteten Anfrage.</small>
       </form>
 
       <div class="contact-box">
@@ -182,6 +188,10 @@
 </section>
 </main>
 
+<a class="whatsapp-float" href="https://wa.me/491634714523?text=Hallo%20Suarez%20Dienstleistungen%2C%20ich%20möchte%20eine%20Anfrage%20stellen." target="_blank" rel="noopener" aria-label="WhatsApp-Nachricht senden">
+  <span>WhatsApp</span>
+</a>
+
 <footer class="footer">
   <div class="container footer-grid">
     <div class="brand">
@@ -194,5 +204,23 @@
     <small>© 2026 Suarez Dienstleistungen · Impressum und Datenschutz vor Veröffentlichung ergänzen.</small>
   </div>
 </footer>
+<script>
+  const toggle = document.querySelector(".mobile-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "×" : "☰";
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+    });
+  });
+</script>
 </body>
 </html>
