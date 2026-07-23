@@ -1,0 +1,33 @@
+SUAREZ DIENSTLEISTUNGEN — WEB V2
+
+ARCHIVOS:
+- index.html
+- styles.css
+
+INSTALACIÓN:
+1. Conserva tu carpeta "assets".
+2. Sustituye en GitHub los archivos index.html y styles.css.
+3. Haz Commit changes.
+4. Espera 1–2 minutos.
+5. Abre la página y recarga.
+
+INCLUYE:
+- Diseño móvil completo.
+- Menú móvil.
+- Filosofía de marca.
+- Sección sobre equipos y productos.
+- Mención discreta de Kärcher.
+- Posibilidad de usar productos preferidos por el cliente.
+- Instagram discreto.
+- WhatsApp flotante.
+- Formulario de contacto.
+
+IMPORTANTE:
+El enlace de Instagram utilizado es:
+https://www.instagram.com/suarezdienstleistungen/
+
+Si tu usuario es diferente, busca esa dirección dentro de index.html y sustitúyela.
+
+Antes de promocionar ampliamente la web, agrega páginas legales:
+- Impressum
+- Datenschutzerklärung
