@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Serviceanfrage und unverbindliches Angebot bei Suarez Dienstleistungen." />
+  <title>Serviceanfrage | Suarez Dienstleistungen</title>
+  <link rel="canonical" href="https://suarezdienst.de/serviceanfrage/" />
+  <style>
+    :root{--bg:#090909;--panel:#121212;--panel2:#181818;--gold:#d6ad55;--gold2:#f0d58a;--text:#f6f1e8;--muted:#b9b2a7;--line:#332b1d;--danger:#ff7b7b;--ok:#79d6a3}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top,#17130d 0,#090909 35%);color:var(--text);min-height:100vh}
+    .wrap{width:min(980px,92%);margin:0 auto;padding:24px 0 60px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none}.brand img{width:70px;height:70px;object-fit:contain;border-radius:50%}.brand-fallback{display:none;width:64px;height:64px;border:1px solid var(--gold);border-radius:50%;align-items:center;justify-content:center;color:var(--gold2);font-weight:700;font-size:22px}.brand h1{font-size:clamp(18px,3vw,28px);margin:0}.brand p{margin:4px 0 0;color:var(--gold);font-size:14px;letter-spacing:.08em;text-transform:uppercase}.top-actions{display:flex;align-items:center;gap:10px}.home-link{color:var(--gold2);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:800;white-space:nowrap}.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}.lang button{background:transparent;color:var(--muted);border:0;padding:10px 14px;cursor:pointer;font-weight:700}.lang button.active{background:var(--gold);color:#111}
+    .hero,.card{background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.015));border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.28);border-radius:24px}.hero{padding:28px;margin-bottom:18px}.eyebrow{color:var(--gold);font-size:13px;text-transform:uppercase;letter-spacing:.14em;font-weight:800}.hero h2{font-size:clamp(30px,6vw,54px);margin:8px 0 12px;line-height:1.02}.hero p{color:var(--muted);font-size:17px;line-height:1.65;margin:0;max-width:760px}.code-preview{margin-top:18px;display:inline-flex;gap:10px;align-items:center;border:1px solid var(--line);background:#0c0c0c;border-radius:14px;padding:12px 16px;color:var(--muted)}.code-preview strong{color:var(--gold2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .card{padding:24px}.progress-head{display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:14px;margin-bottom:10px}.progress{height:8px;background:#222;border-radius:999px;overflow:hidden;margin-bottom:24px}.progress span{display:block;height:100%;width:10%;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:.25s ease}.step{display:none;animation:fade .25s ease}.step.active{display:block}@keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}.step h3{font-size:26px;margin:0 0 8px}.hint{color:var(--muted);margin:0 0 24px;line-height:1.55}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.full{grid-column:1/-1}.field label,.group-title{display:block;font-weight:700;margin:0 0 8px}.required:after{content:" *";color:var(--gold)}input,select,textarea{width:100%;background:#0e0e0e;border:1px solid #3b3427;color:var(--text);border-radius:13px;padding:14px 15px;font:inherit;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,173,85,.12)}textarea{min-height:145px;resize:vertical}.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.option{display:flex;align-items:flex-start;gap:10px;background:#0e0e0e;border:1px solid #332d23;border-radius:13px;padding:13px;cursor:pointer}.option input{width:auto;margin-top:3px;accent-color:var(--gold)}.conditional{display:none;margin-top:18px;padding:18px;border:1px dashed #4d412b;border-radius:16px;background:#0d0c0a}.conditional.show{display:block}.note{background:#0d0c09;border-left:3px solid var(--gold);padding:14px 16px;border-radius:10px;color:var(--muted);line-height:1.5}.actions{display:flex;justify-content:space-between;gap:12px;margin-top:26px}.btn{border:0;border-radius:13px;padding:14px 20px;font-weight:800;cursor:pointer;font-size:15px}.btn.secondary{background:#24211c;color:var(--text)}.btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17120a}.btn:disabled{opacity:.45;cursor:not-allowed}.error{color:var(--danger);margin-top:12px;display:none}.success{display:none;text-align:center;padding:22px}.success .big-code{font:800 clamp(25px,6vw,42px)/1 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--gold2);margin:20px 0}.spinner{display:none;margin-left:8px}.privacy{font-size:13px;color:var(--muted);line-height:1.55}.footer{text-align:center;color:#837b70;font-size:13px;margin-top:22px}.footer a{color:#a69d8f;text-underline-offset:3px}
+    @media(max-width:720px){.topbar{align-items:flex-start;flex-wrap:wrap}.brand img{width:56px;height:56px}.top-actions{width:100%;justify-content:space-between}.grid,.options{grid-template-columns:1fr}.hero,.card{border-radius:18px;padding:19px}.actions{position:sticky;bottom:8px;background:rgba(9,9,9,.92);backdrop-filter:blur(8px);padding:10px;border-radius:16px}.btn{flex:1;padding:13px 10px}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <div class="topbar">
+    <a class="brand" href="../" aria-label="Suarez Dienstleistungen Startseite">
+      <img src="../assets/sd-logo.jpg" alt="Suarez Dienstleistungen Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="brand-fallback">SD</div>
+      <div><h1>Suarez Dienstleistungen</h1><p>Alles aus einer Hand</p></div>
+    </a>
+    <div class="top-actions">
+      <a class="home-link" href="../" data-de="Zur Startseite" data-es="Ir al inicio">Zur Startseite</a>
+      <div class="lang"><button type="button" class="active" data-lang="de">DE</button><button type="button" data-lang="es">ES</button></div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="eyebrow" data-de="Kostenlose & unverbindliche Anfrage" data-es="Solicitud gratuita y sin compromiso">Kostenlose & unverbindliche Anfrage</div>
+    <h2 data-de="Serviceanfrage" data-es="Solicitud de servicio">Serviceanfrage</h2>
+    <p data-de="Beantworten Sie die folgenden Fragen. So können wir Ihren Auftrag schneller einschätzen und Ihnen ein passendes Angebot erstellen. In der Regel melden wir uns innerhalb von 24 Stunden." data-es="Responda las siguientes preguntas. Así podremos evaluar su solicitud más rápido y preparar un presupuesto adecuado. Normalmente respondemos en un plazo de 24 horas.">Beantworten Sie die folgenden Fragen. So können wir Ihren Auftrag schneller einschätzen und Ihnen ein passendes Angebot erstellen. In der Regel melden wir uns innerhalb von 24 Stunden.</p>
+    <div class="code-preview"><span data-de="Ihre Anfrage erhält automatisch eine Referenz:" data-es="Su solicitud recibirá automáticamente una referencia:">Ihre Anfrage erhält automatisch eine Referenz:</span> <strong id="previewCode">SD-2026-000000</strong></div>
+  </section>
+
+  <form id="serviceForm" class="card" action="https://formspree.io/f/xbdnzzwa" method="POST" enctype="multipart/form-data" novalidate>
+    <input type="hidden" name="_subject" value="Neue Serviceanfrage | Suarez Dienstleistungen">
+    <input type="hidden" name="anfragecode" id="hiddenCode">
+    <input type="hidden" name="sprache" id="hiddenLang" value="Deutsch">
+    <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+    <div class="progress-head"><span id="stepText">Schritt 1 von 10</span><span id="percentText">10%</span></div>
+    <div class="progress"><span id="progressBar"></span></div>
+
+    <section class="step active" data-step="1">
+      <h3 data-de="Kontaktdaten" data-es="Datos de contacto">Kontaktdaten</h3>
+      <p class="hint" data-de="Wie dürfen wir Sie erreichen?" data-es="¿Cómo podemos contactarle?">Wie dürfen wir Sie erreichen?</p>
+      <div class="grid">
+        <div class="field"><label class="required" data-de="Vorname" data-es="Nombre">Vorname</label><input required name="vorname" autocomplete="given-name"></div>
+        <div class="field"><label class="required" data-de="Nachname" data-es="Apellidos">Nachname</label><input required name="nachname" autocomplete="family-name"></div>
+        <div class="field"><label class="required" data-de="Telefon" data-es="Teléfono">Telefon</label><input required name="telefon" type="tel" autocomplete="tel"></div>
+        <div class="field"><label class="required" data-de="E-Mail" data-es="Correo electrónico">E-Mail</label><input required name="email" type="email" autocomplete="email"></div>
+        <div class="field full"><label data-de="Firma (optional)" data-es="Empresa (opcional)">Firma (optional)</label><input name="firma" autocomplete="organization"></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="2">
+      <h3 data-de="Einsatzort" data-es="Dirección del servicio">Einsatzort</h3>
+      <p class="hint" data-de="Wo soll die Dienstleistung stattfinden?" data-es="¿Dónde se realizará el servicio?">Wo soll die Dienstleistung stattfinden?</p>
+      <div class="grid">
+        <div class="field full"><label class="required" data-de="Straße und Hausnummer" data-es="Calle y número">Straße und Hausnummer</label><input required name="adresse" autocomplete="street-address"></div>
+        <div class="field"><label class="required" data-de="PLZ" data-es="Código postal">PLZ</label><input required name="plz" inputmode="numeric" autocomplete="postal-code"></div>
+        <div class="field"><label class="required" data-de="Ort" data-es="Ciudad">Ort</label><input required name="ort" autocomplete="address-level2"></div>
+        <div class="field full"><label data-de="Parkmöglichkeit" data-es="Estacionamiento">Parkmöglichkeit</label><select name="parken"><option value="">—</option><option>Ja / Sí</option><option>Nein / No</option><option>Kostenpflichtig / De pago</option><option>Unbekannt / No lo sé</option></select></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="3">
+      <h3 data-de="Objekt und Leistung" data-es="Inmueble y servicio">Objekt und Leistung</h3>
+      <div class="grid">
+        <div class="field full"><label class="required" data-de="Art des Objekts" data-es="Tipo de inmueble">Art des Objekts</label><select required name="objektart" id="objectType"><option value="">Bitte auswählen / Seleccione</option><option value="Wohnung/Haus">Wohnung / Haus — Vivienda</option><option value="Ferienwohnung/Airbnb">Ferienwohnung / Airbnb</option><option value="Büro">Büro — Oficina</option><option value="Treppenhaus">Treppenhaus — Comunidad</option><option value="Gewerbe">Gewerberaum — Local comercial</option><option value="Sonstiges">Sonstiges — Otro</option></select></div>
+        <div class="field full"><span class="group-title required" data-de="Gewünschte Leistungen" data-es="Servicios solicitados">Gewünschte Leistungen</span><div class="options" id="services">
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Wohnungsreinigung"><span data-de="Wohnungsreinigung" data-es="Limpieza de vivienda">Wohnungsreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Grundreinigung"><span data-de="Grundreinigung" data-es="Limpieza profunda">Grundreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Umzugsreinigung"><span data-de="Umzugsreinigung" data-es="Limpieza de mudanza">Umzugsreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Baureinigung"><span data-de="Bau-/Renovierungsreinigung" data-es="Limpieza después de obra">Bau-/Renovierungsreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Büroreinigung"><span data-de="Büroreinigung" data-es="Limpieza de oficinas">Büroreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Treppenhausreinigung"><span data-de="Treppenhausreinigung" data-es="Limpieza de escaleras">Treppenhausreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Fensterreinigung" id="windowService"><span data-de="Fensterreinigung" data-es="Limpieza de ventanas">Fensterreinigung</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Ferienwohnung"><span data-de="Ferienwohnung / Airbnb" data-es="Apartamento turístico / Airbnb">Ferienwohnung / Airbnb</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Wäsche/Bügeln"><span data-de="Wäsche / Bügeln" data-es="Lavado / Planchado">Wäsche / Bügeln</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Hausmeisterservice"><span>Hausmeisterservice</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Garten"><span data-de="Gartenarbeiten" data-es="Jardinería">Gartenarbeiten</span></label>
+          <label class="option"><input type="checkbox" name="leistungen[]" value="Sonstiges"><span data-de="Sonstiges" data-es="Otro">Sonstiges</span></label>
+        </div></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="4">
+      <h3 data-de="Beschreiben Sie Ihren Auftrag" data-es="Describa su solicitud">Beschreiben Sie Ihren Auftrag</h3>
+      <p class="hint" data-de="Bitte beschreiben Sie kurz, was gereinigt oder erledigt werden soll. Nennen Sie auch Besonderheiten wie starke Verschmutzung, Haustiere, Renovierung, Schlüsselübergabe oder einen festen Termin." data-es="Cuéntenos brevemente qué necesita. Indique también situaciones especiales como mucha suciedad, mascotas, reforma, entrega de llaves o una fecha específica.">Bitte beschreiben Sie kurz, was gereinigt oder erledigt werden soll.</p>
+      <textarea required name="beschreibung" data-placeholder-de="Was benötigen Sie genau?" data-placeholder-es="¿Qué necesita exactamente?" placeholder="Was benötigen Sie genau?"></textarea>
+    </section>
+
+    <section class="step" data-step="5">
+      <h3 data-de="Objektdaten" data-es="Información del inmueble">Objektdaten</h3>
+      <div class="grid">
+        <div class="field"><label data-de="Fläche in m²" data-es="Superficie en m²">Fläche in m²</label><input name="objekt_m2" type="number" min="0" step="1"></div>
+        <div class="field"><label data-de="Etage" data-es="Planta">Etage</label><input name="etage"></div>
+        <div class="field"><label data-de="Zimmer / Büros" data-es="Habitaciones / Oficinas">Zimmer / Büros</label><input name="zimmer" type="number" min="0"></div>
+        <div class="field"><label data-de="Bäder / WCs" data-es="Baños / Aseos">Bäder / WCs</label><input name="baeder" type="number" min="0"></div>
+        <div class="field"><label data-de="Küche vorhanden?" data-es="¿Hay cocina?">Küche vorhanden?</label><select name="kueche"><option value="">—</option><option>Ja / Sí</option><option>Nein / No</option></select></div>
+        <div class="field"><label data-de="Haustiere" data-es="Mascotas">Haustiere</label><select name="haustiere"><option value="">—</option><option>Keine / Ninguna</option><option>Hund / Perro</option><option>Katze / Gato</option><option>Andere / Otra</option></select></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="6">
+      <h3 data-de="Fensterreinigung" data-es="Limpieza de ventanas">Fensterreinigung</h3>
+      <p class="hint" data-de="Diese Angaben helfen uns, die Fensterreinigung nach Glasfläche und Aufwand einzuschätzen." data-es="Estos datos nos ayudan a calcular la limpieza según los metros cuadrados de cristal y el nivel de dificultad.">Diese Angaben helfen uns, die Fensterreinigung nach Glasfläche und Aufwand einzuschätzen.</p>
+      <div class="note" data-de="Bitte geben Sie die gesamte Glasfläche möglichst in Quadratmetern an. Beispiel: Breite × Höhe jeder Glasfläche, anschließend alle Flächen addieren." data-es="Indique, en lo posible, la superficie total de cristal en metros cuadrados. Ejemplo: ancho × alto de cada cristal y luego sumar todas las superficies.">Bitte geben Sie die gesamte Glasfläche möglichst in Quadratmetern an.</div>
+      <div class="grid" style="margin-top:18px">
+        <div class="field"><label data-de="Gesamte Glasfläche in m²" data-es="Superficie total de cristal en m²">Gesamte Glasfläche in m²</label><input name="fenster_m2" type="number" min="0" step="0.1" placeholder="z. B. 18,5"></div>
+        <div class="field"><label data-de="Anzahl Fenster ungefähr" data-es="Cantidad aproximada de ventanas">Anzahl Fenster ungefähr</label><input name="fenster_anzahl" type="number" min="0"></div>
+        <div class="field"><label data-de="Reinigungsseite" data-es="Lado a limpiar">Reinigungsseite</label><select name="fenster_seite"><option value="">—</option><option>Innen / Interior</option><option>Außen / Exterior</option><option>Innen und außen / Interior y exterior</option></select></div>
+        <div class="field"><label data-de="Zugänglichkeit / Höhe" data-es="Accesibilidad / altura">Zugänglichkeit / Höhe</label><select name="fenster_hoehe"><option value="">—</option><option>Erdgeschoss / Planta baja</option><option>1. Etage / Primer piso</option><option>2. Etage / Segundo piso</option><option>Über 2. Etage / Más de dos pisos</option><option>Schwer zugänglich / Difícil acceso</option></select></div>
+        <div class="field full"><span class="group-title" data-de="Fensterart und Zusatzleistungen" data-es="Tipo de ventana y extras">Fensterart und Zusatzleistungen</span><div class="options">
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Normale Fenster"><span data-de="Normale Fenster" data-es="Ventanas normales">Normale Fenster</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Große Glasflächen"><span data-de="Große Glasflächen / Schaufenster" data-es="Ventanales / Escaparates">Große Glasflächen / Schaufenster</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Glas Türen"><span data-de="Glastüren" data-es="Puertas de cristal">Glastüren</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Wintergarten"><span>Wintergarten</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Rahmen"><span data-de="Rahmen" data-es="Marcos">Rahmen</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Falze/Schienen"><span data-de="Falze / Schienen" data-es="Rieles / Ranuras">Falze / Schienen</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Rollläden/Jalousien"><span data-de="Rollläden / Jalousien" data-es="Persianas">Rollläden / Jalousien</span></label>
+          <label class="option"><input type="checkbox" name="fenster_extras[]" value="Dachfenster"><span data-de="Dachfenster" data-es="Claraboyas">Dachfenster</span></label>
+        </div></div>
+        <div class="field full"><label data-de="Wann wurden die Fenster zuletzt gereinigt?" data-es="¿Cuándo se limpiaron por última vez?">Wann wurden die Fenster zuletzt gereinigt?</label><select name="fenster_zuletzt"><option value="">—</option><option>Unter 3 Monaten / Menos de 3 meses</option><option>3–6 Monate / 3–6 meses</option><option>Über 6 Monate / Más de 6 meses</option><option>Über 1 Jahr / Más de 1 año</option><option>Unbekannt / No lo sé</option></select></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="7">
+      <h3 data-de="Fotos und Zusatzinformationen" data-es="Fotos e información adicional">Fotos und Zusatzinformationen</h3>
+      <p class="hint" data-de="Fotos erleichtern eine genauere Einschätzung. Bitte laden Sie nur Bilder hoch, die für die Anfrage erforderlich sind." data-es="Las fotos permiten calcular mejor el trabajo. Suba únicamente imágenes necesarias para la solicitud.">Fotos erleichtern eine genauere Einschätzung.</p>
+      <div class="grid">
+        <div class="field full"><label data-de="Fotos auswählen (max. 10)" data-es="Seleccionar fotos (máx. 10)">Fotos auswählen (max. 10)</label><input id="photos" name="fotos" type="file" accept="image/*" multiple></div>
+        <div class="field full"><label data-de="Weitere Hinweise" data-es="Observaciones adicionales">Weitere Hinweise</label><textarea name="zusatzinfo"></textarea></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="8">
+      <h3 data-de="Termin und Häufigkeit" data-es="Fecha y frecuencia">Termin und Häufigkeit</h3>
+      <div class="grid">
+        <div class="field"><label data-de="Wunschtermin" data-es="Fecha deseada">Wunschtermin</label><input name="wunschtermin" type="date"></div>
+        <div class="field"><label data-de="Bevorzugte Uhrzeit" data-es="Horario preferido">Bevorzugte Uhrzeit</label><select name="uhrzeit"><option value="">—</option><option>08:00–10:00</option><option>10:00–12:00</option><option>12:00–14:00</option><option>14:00–16:00</option><option>16:00–18:00</option><option>Flexibel / Flexible</option></select></div>
+        <div class="field"><label data-de="Häufigkeit" data-es="Frecuencia">Häufigkeit</label><select name="haeufigkeit"><option value="">—</option><option>Einmalig / Una vez</option><option>Wöchentlich / Semanal</option><option>Alle 2 Wochen / Cada 15 días</option><option>Monatlich / Mensual</option><option>Andere / Otra</option></select></div>
+        <div class="field"><label data-de="Dringlichkeit" data-es="Urgencia">Dringlichkeit</label><select name="dringlichkeit"><option value="">—</option><option>So schnell wie möglich / Lo antes posible</option><option>Diese Woche / Esta semana</option><option>Diesen Monat / Este mes</option><option>Nicht dringend / Sin prisa</option></select></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="9">
+      <h3 data-de="Kontakt und Angebot" data-es="Contacto y presupuesto">Kontakt und Angebot</h3>
+      <div class="grid">
+        <div class="field full"><label class="required" data-de="Bevorzugter Kontaktweg" data-es="Forma de contacto preferida">Bevorzugter Kontaktweg</label><select required name="kontaktweg"><option value="">—</option><option>Telefon / Llamada</option><option>WhatsApp</option><option>E-Mail / Correo electrónico</option><option>Videoanruf / Videollamada</option></select></div>
+        <div class="field"><label data-de="Angebotswunsch" data-es="Tipo de presupuesto">Angebotswunsch</label><select name="angebot"><option value="">—</option><option>Nur Angebot / Solo presupuesto</option><option>Angebot + Besichtigung / Presupuesto + visita</option><option>Beratung gewünscht / Necesito asesoramiento</option></select></div>
+        <div class="field"><label data-de="Rechnung" data-es="Factura">Rechnung</label><select name="rechnung"><option value="">—</option><option>Privat / Particular</option><option>Firma / Empresa</option></select></div>
+        <div class="field"><label data-de="Zugang zum Objekt" data-es="Acceso al inmueble">Zugang zum Objekt</label><select name="zugang"><option value="">—</option><option>Jemand ist anwesend / Habrá alguien</option><option>Schlüsselübergabe / Entrega de llaves</option><option>Noch unklar / Aún no lo sé</option></select></div>
+        <div class="field"><label data-de="Wie haben Sie uns gefunden?" data-es="¿Cómo nos conoció?">Wie haben Sie uns gefunden?</label><select name="quelle"><option value="">—</option><option>Google</option><option>Instagram</option><option>Facebook</option><option>Kleinanzeigen</option><option>nebenan.de</option><option>WhatsApp</option><option>Empfehlung / Recomendación</option><option>Andere / Otro</option></select></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="10">
+      <h3 data-de="Prüfen und absenden" data-es="Revisar y enviar">Prüfen und absenden</h3>
+      <p class="hint" data-de="Ihre Anfrage wird unter dem untenstehenden Code geführt. Bitte bewahren Sie ihn für Rückfragen auf." data-es="Su solicitud será gestionada con el siguiente código. Guárdelo para futuras consultas.">Ihre Anfrage wird unter dem untenstehenden Code geführt.</p>
+      <div class="code-preview" style="display:flex;justify-content:center"><strong id="finalCode">SD-2026-000000</strong></div>
+      <div style="margin-top:22px" class="privacy">
+        <label class="option"><input required type="checkbox" name="datenschutz" value="akzeptiert"><span data-de="Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage zu. Die Angaben werden ausschließlich zur Kontaktaufnahme, Angebotserstellung und Auftragsbearbeitung verwendet." data-es="Acepto el tratamiento de mis datos para gestionar esta solicitud. Los datos se utilizarán únicamente para contacto, presupuesto y tramitación del servicio.">Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage zu.</span></label>
+      </div>
+      <p class="error" id="submitError"></p>
+    </section>
+
+    <div class="actions"><button type="button" class="btn secondary" id="prevBtn" data-de="Zurück" data-es="Atrás" disabled>Zurück</button><button type="button" class="btn primary" id="nextBtn" data-de="Weiter" data-es="Continuar">Weiter</button><button type="submit" class="btn primary" id="submitBtn" style="display:none" data-de="Anfrage senden" data-es="Enviar solicitud">Anfrage senden <span class="spinner">…</span></button></div>
+
+    <div class="success" id="successBox">
+      <div class="eyebrow" data-de="Anfrage erfolgreich gesendet" data-es="Solicitud enviada correctamente">Anfrage erfolgreich gesendet</div>
+      <h3 data-de="Vielen Dank für Ihr Vertrauen!" data-es="¡Gracias por su confianza!">Vielen Dank für Ihr Vertrauen!</h3>
+      <p data-de="Wir prüfen Ihre Angaben und melden uns in der Regel innerhalb von 24 Stunden. Ihr persönlicher Anfragecode lautet:" data-es="Revisaremos los datos y normalmente responderemos en un plazo de 24 horas. Su código de solicitud es:">Wir prüfen Ihre Angaben und melden uns in der Regel innerhalb von 24 Stunden.</p>
+      <div class="big-code" id="successCode"></div>
+      <p data-de="Bitte bewahren Sie diesen Code für Rückfragen auf." data-es="Guarde este código para futuras consultas.">Bitte bewahren Sie diesen Code für Rückfragen auf.</p>
+    </div>
+  </form>
+  <div class="footer">© 2026 Suarez Dienstleistungen · <a href="../">Startseite</a> · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></div>
+</div>
+<script>
+  const form = document.getElementById('serviceForm');
+  const steps = [...document.querySelectorAll('.step')];
+  const total = steps.length; let current = 1; let lang = 'de';
+  const endpoint = form.action;
+
+  function makeCode(){
+    const now = new Date();
+    const y = now.getFullYear();
+    const stamp = String(now.getMonth()+1).padStart(2,'0') + String(now.getDate()).padStart(2,'0') + String(now.getHours()).padStart(2,'0') + String(now.getMinutes()).padStart(2,'0') + String(now.getSeconds()).padStart(2,'0');
+    const rnd = String(Math.floor(Math.random()*90)+10);
+    return `SD-${y}-${stamp}${rnd}`;
+  }
+  const requestCode = makeCode();
+  ['previewCode','finalCode','successCode'].forEach(id=>document.getElementById(id).textContent=requestCode);
+  document.getElementById('hiddenCode').value=requestCode;
+
+  function t(de,es){return lang==='de'?de:es}
+  function updateUI(){
+    steps.forEach(s=>s.classList.toggle('active', Number(s.dataset.step)===current));
+    const pct=Math.round(current/total*100); document.getElementById('progressBar').style.width=pct+'%';
+    document.getElementById('stepText').textContent=t(`Schritt ${current} von ${total}`,`Paso ${current} de ${total}`);
+    document.getElementById('percentText').textContent=pct+'%';
+    document.getElementById('prevBtn').disabled=current===1;
+    document.getElementById('nextBtn').style.display=current===total?'none':'inline-block';
+    document.getElementById('submitBtn').style.display=current===total?'inline-block':'none';
+    window.scrollTo({top:document.querySelector('.card').offsetTop-10,behavior:'smooth'});
+  }
+  function translate(){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-de]').forEach(el=>{ el.textContent=el.dataset[lang]; });
+    document.querySelectorAll('[data-placeholder-de]').forEach(el=>{el.placeholder=lang==='de'?el.dataset.placeholderDe:el.dataset.placeholderEs});
+    document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+    document.getElementById('hiddenLang').value=lang==='de'?'Deutsch':'Español'; updateUI();
+  }
+  document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{lang=b.dataset.lang;translate()}));
+
+  function validStep(){
+    const active=steps[current-1];
+    const req=[...active.querySelectorAll('[required]')];
+    let ok=true; req.forEach(i=>{ if(!i.checkValidity()){i.reportValidity();ok=false;return false;} });
+    if(current===3 && !document.querySelector('#services input:checked')){alert(t('Bitte wählen Sie mindestens eine Leistung.','Seleccione al menos un servicio.'));return false}
+    return ok;
+  }
+  document.getElementById('nextBtn').addEventListener('click',()=>{if(validStep()&&current<total){current++;updateUI()}});
+  document.getElementById('prevBtn').addEventListener('click',()=>{if(current>1){current--;updateUI()}});
+  document.getElementById('photos').addEventListener('change',e=>{if(e.target.files.length>10){alert(t('Bitte maximal 10 Fotos auswählen.','Seleccione un máximo de 10 fotos.'));e.target.value=''}});
+
+  form.addEventListener('submit', async e=>{
+    e.preventDefault(); if(!validStep()) return;
+    const btn=document.getElementById('submitBtn'), spinner=btn.querySelector('.spinner'), err=document.getElementById('submitError');
+    btn.disabled=true;spinner.style.display='inline';err.style.display='none';
+    try{
+      const data=new FormData(form);
+      const res=await fetch(endpoint,{method:'POST',body:data,headers:{Accept:'application/json'}});
+      if(!res.ok) throw new Error('submit');
+      document.querySelectorAll('.step,.actions,.progress,.progress-head').forEach(el=>el.style.display='none');
+      document.getElementById('successBox').style.display='block';
+    }catch(e){err.textContent=t('Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt.','No se pudo enviar la solicitud. Inténtelo de nuevo o contáctenos directamente.');err.style.display='block';btn.disabled=false;spinner.style.display='none'}
+  });
+  updateUI();
+</script>
+</body>
+</html>
