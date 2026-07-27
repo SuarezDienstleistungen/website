@@ -730,3 +730,273 @@ footer small a {
   height: 1px !important;
   overflow: hidden !important;
 }
+
+/* Campaign landing page */
+.offer-page {
+  background: var(--black);
+}
+
+.offer-nav .button {
+  color: var(--white);
+}
+
+.offer-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 155px 0 90px;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(201,154,46,.20), transparent 27%),
+    linear-gradient(135deg, #060606 0%, #111 60%, #070707 100%);
+}
+
+.offer-hero-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, rgba(0,0,0,.12), rgba(0,0,0,.62));
+  pointer-events: none;
+}
+
+.offer-hero-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.offer-copy {
+  max-width: 760px;
+}
+
+.offer-copy h1 {
+  margin-bottom: 28px;
+  font-size: clamp(3.6rem, 8vw, 7.4rem);
+  line-height: .9;
+  letter-spacing: -.05em;
+}
+
+.offer-copy h1 em {
+  color: var(--gold-light);
+  font-style: normal;
+}
+
+.offer-lead {
+  max-width: 680px;
+  color: #d8d2c8;
+  font-size: 1.08rem;
+}
+
+.offer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 32px 0;
+}
+
+.offer-benefits {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.offer-benefits li {
+  position: relative;
+  padding-left: 25px;
+  color: #ece6dc;
+}
+
+.offer-benefits li::before {
+  position: absolute;
+  left: 0;
+  color: var(--gold-light);
+  content: "✓";
+  font-weight: 800;
+}
+
+.offer-smallprint {
+  max-width: 700px;
+  margin-top: 26px;
+  color: #a9a399;
+  font-size: .82rem;
+}
+
+.offer-card {
+  padding: 40px 34px;
+  border: 1px solid rgba(227,189,97,.55);
+  background: linear-gradient(145deg, rgba(31,26,14,.94), rgba(5,5,5,.98));
+  box-shadow: 0 30px 80px rgba(0,0,0,.55);
+  text-align: center;
+}
+
+.offer-card img {
+  width: min(240px, 80%);
+  margin: 0 auto 28px;
+  border-radius: 50%;
+}
+
+.offer-card p {
+  margin: 0;
+  color: var(--gold-light);
+  font-size: .75rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+
+.offer-card strong,
+.offer-card span {
+  display: block;
+}
+
+.offer-card strong {
+  margin: 8px 0;
+  color: var(--white);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.offer-card span {
+  color: var(--muted);
+}
+
+.offer-details {
+  background: var(--cream);
+  color: var(--text-dark);
+}
+
+.offer-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.offer-steps article {
+  padding: 32px;
+  border: 1px solid #ddd5c6;
+  background: var(--white);
+}
+
+.offer-steps span {
+  color: var(--gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.8rem;
+}
+
+.offer-steps h2 {
+  margin: 18px 0 10px;
+  font-size: 1.65rem;
+}
+
+.offer-steps p {
+  margin-bottom: 0;
+  color: #5d594f;
+}
+
+.offer-form-section {
+  background: #ece5d7;
+  color: var(--text-dark);
+}
+
+.offer-form-layout {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.offer-form-layout > div:first-child {
+  position: sticky;
+  top: 130px;
+}
+
+.offer-form-layout h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+}
+
+.offer-form-layout > div:first-child > p:not(.kicker) {
+  color: #5d594f;
+}
+
+.offer-direct {
+  margin-top: 30px;
+  padding: 22px;
+  border-left: 3px solid var(--gold);
+  background: var(--white);
+}
+
+.offer-direct strong,
+.offer-direct a {
+  display: block;
+}
+
+.offer-direct a {
+  margin-top: 6px;
+  color: #72520f;
+  font-weight: 800;
+}
+
+.offer-form {
+  box-shadow: 0 24px 55px rgba(37,28,10,.10);
+}
+
+@media (max-width: 950px) {
+  .offer-hero-layout,
+  .offer-form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-card {
+    width: min(540px, 100%);
+  }
+
+  .offer-form-layout > div:first-child {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .offer-nav {
+    min-height: 78px;
+  }
+
+  .offer-nav .button {
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: .82rem;
+  }
+
+  .offer-hero {
+    min-height: auto;
+    padding: 125px 0 70px;
+  }
+
+  .offer-copy h1 {
+    font-size: clamp(3.1rem, 17vw, 4.8rem);
+  }
+
+  .offer-actions {
+    display: grid;
+  }
+
+  .offer-actions .button {
+    width: 100%;
+  }
+
+  .offer-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-card,
+  .offer-steps article {
+    padding: 25px;
+  }
+}
