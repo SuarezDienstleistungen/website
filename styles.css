@@ -731,6 +731,116 @@ footer small a {
   overflow: hidden !important;
 }
 
+/* Limited-time homepage promotion */
+.promo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  display: none;
+  place-items: center;
+  padding: 20px;
+}
+
+.promo-modal.open {
+  display: grid;
+}
+
+.promo-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.76);
+  backdrop-filter: blur(8px);
+}
+
+.promo-dialog {
+  position: relative;
+  z-index: 1;
+  width: min(560px, 100%);
+  max-height: calc(100svh - 40px);
+  overflow-y: auto;
+  padding: 38px;
+  border: 1px solid rgba(227,189,97,.58);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 50% 0, rgba(201,154,46,.20), transparent 42%),
+    linear-gradient(150deg, #17130c, #070707 68%);
+  box-shadow: 0 35px 100px rgba(0,0,0,.75);
+  text-align: center;
+}
+
+.promo-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(227,189,97,.35);
+  border-radius: 50%;
+  background: rgba(0,0,0,.45);
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.promo-logo img {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.promo-kicker {
+  margin: 0 0 10px;
+  color: var(--gold-light);
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.promo-dialog h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2.7rem, 8vw, 4.7rem);
+  line-height: .95;
+}
+
+.promo-dialog h2 em {
+  color: var(--gold-light);
+  font-style: normal;
+}
+
+.promo-dialog > p:not(.promo-kicker):not(.promo-note) {
+  color: #d8d2c8;
+}
+
+.promo-deadline {
+  display: inline-block;
+  margin: 8px 0 22px;
+  padding: 7px 12px;
+  border: 1px solid rgba(227,189,97,.32);
+  border-radius: 999px;
+  font-size: .88rem;
+  font-weight: 800;
+}
+
+.promo-button {
+  width: 100%;
+}
+
+.promo-note {
+  margin: 16px 0 0;
+  color: #9f998f;
+  font-size: .76rem;
+  line-height: 1.45;
+}
+
+body.promo-open {
+  overflow: hidden;
+}
+
 /* Campaign landing page */
 .offer-page {
   background: var(--black);
@@ -964,6 +1074,15 @@ footer small a {
 }
 
 @media (max-width: 620px) {
+  .promo-dialog {
+    padding: 30px 20px 24px;
+  }
+
+  .promo-logo img {
+    width: 82px;
+    height: 82px;
+  }
+
   .offer-nav {
     min-height: 78px;
   }
