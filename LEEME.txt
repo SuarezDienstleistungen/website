@@ -1,33 +1,22 @@
-SUAREZ DIENSTLEISTUNGEN — WEB V2
+SUAREZ DIENSTLEISTUNGEN — WEB MIT IMPRESSUM UND DATENSCHUTZ
 
-ARCHIVOS:
+Enthalten:
 - index.html
 - styles.css
+- impressum.html
+- datenschutz.html
+- CNAME
 
-INSTALACIÓN:
-1. Conserva tu carpeta "assets".
-2. Sustituye en GitHub los archivos index.html y styles.css.
-3. Haz Commit changes.
-4. Espera 1–2 minutos.
-5. Abre la página y recarga.
+Wichtig:
+1. Die bestehende assets-Mappe im GitHub-Repository behalten.
+2. Diese fünf Dateien in das Hauptverzeichnis des Repositories hochladen bzw. ersetzen.
+3. Commit changes.
+4. Nach 1–2 Minuten suarezdienst.de neu laden.
 
-INCLUYE:
-- Diseño móvil completo.
-- Menú móvil.
-- Filosofía de marca.
-- Sección sobre equipos y productos.
-- Mención discreta de Kärcher.
-- Posibilidad de usar productos preferidos por el cliente.
-- Instagram discreto.
-- WhatsApp flotante.
-- Formulario de contacto.
+Geändert:
+- Neue E-Mail-Adresse: info@suarezdienst.de
+- Anklickbare Links zu Impressum und Datenschutz im Footer
+- Datenschutzhinweis unter dem Kontaktformular
+- Rechtliche Seiten für GitHub Pages, Formspree, E-Mail, Telefon, WhatsApp und Instagram
 
-IMPORTANTE:
-El enlace de Instagram utilizado es:
-https://www.instagram.com/suarezdienstleistungen/
-
-Si tu usuario es diferente, busca esa dirección dentro de index.html y sustitúyela.
-
-Antes de promocionar ampliamente la web, agrega páginas legales:
-- Impressum
-- Datenschutzerklärung
+Bitte vor Veröffentlichung prüfen, ob die Geschäftsanschrift Steinweg 10, 01662 Meißen exakt der offiziellen ladungsfähigen Anschrift entspricht.

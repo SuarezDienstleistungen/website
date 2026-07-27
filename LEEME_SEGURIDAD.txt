@@ -1,0 +1,37 @@
+SUAREZ DIENSTLEISTUNGEN — VERSIÓN SEGURA
+
+ARCHIVOS:
+- index.html
+- styles.css
+- script.js
+- impressum.html
+- datenschutz.html
+- CNAME
+
+CAMBIOS DE SEGURIDAD:
+- Content Security Policy para limitar recursos externos.
+- JavaScript separado del HTML.
+- Política de referencia restrictiva.
+- Honeypot anti-spam para Formspree.
+- Límites de longitud y autocompletado seguro en el formulario.
+- Enlaces externos con protección noopener/noreferrer.
+- Eliminación del DOCTYPE duplicado.
+
+PASOS IMPORTANTES EN GITHUB:
+1. Sustituir los archivos del repositorio por estos.
+2. Conservar la carpeta assets.
+3. En Settings > Pages, activar “Enforce HTTPS”.
+4. Verificar el dominio suarezdienst.de en GitHub.
+5. No guardar contraseñas, documentos de clientes, claves o datos privados en el repositorio.
+
+PASOS IMPORTANTES EN FORMSPREE:
+1. Abrir el formulario xrenakak.
+2. Activar Spam protection / reCAPTCHA.
+3. Usar “Restrict to Domain” y permitir únicamente suarezdienst.de.
+4. Revisar periódicamente la carpeta Spam.
+
+NOTA:
+GitHub Pages no permite configurar todos los encabezados HTTP de seguridad desde el repositorio.
+Para una protección más avanzada y un uso empresarial a largo plazo, conviene migrar la web
+a un hosting comercial donde puedan configurarse encabezados como HSTS, Permissions-Policy
+y X-Content-Type-Options.
