@@ -1,8 +1,539 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>MalerPro Sachsen | Demo von SD Business Solutions</title><link rel="stylesheet" href="../business-solutions.css">
-<style>:root{--gold:#e8a56e;--gold2:#e8a56e}</style></head><body>
-<header><div class="container nav"><a class="brand" href="../business-solutions.html"><span class="brand-mark">SD</span><span>DEMO · MALERPRO SACHSEN</span></a><nav><a class="button ghost" href="../business-solutions.html">Zurück zum Portfolio</a></nav></div></header>
-<main><section class="hero"><div class="container hero-content"><p class="kicker">Malerarbeiten · Meißen und Umgebung</p><h1>Räume mit <span>neuer Wirkung.</span></h1><p>Eine futuristische Demonstrationsseite von SD Business Solutions. Dieses Projekt dient als Designbeispiel und stellt kein reales Unternehmen dar.</p><div class="actions"><a class="button" href="#services">Leistungen ansehen</a><a class="button ghost" href="mailto:kontakt@suarezdienst.de">Ähnliches Projekt anfragen</a></div></div></section>
-<section id="services"><div class="container"><div class="section-head reveal"><h2>Klare Leistungen. <span>Klare Wirkung.</span></h2><p>Eine moderne Webseite führt Besucher schnell zu den wichtigsten Informationen und zur Kontaktaufnahme.</p></div><div class="grid"><article class='card reveal'><span class='module'>Service</span><h3>Innenanstrich</h3><p>Professionell geplant, sauber ausgeführt und transparent kommuniziert.</p></article><article class='card reveal'><span class='module'>Service</span><h3>Fassaden</h3><p>Professionell geplant, sauber ausgeführt und transparent kommuniziert.</p></article><article class='card reveal'><span class='module'>Service</span><h3>Renovierung</h3><p>Professionell geplant, sauber ausgeführt und transparent kommuniziert.</p></article></div></div></section>
-<section><div class="container"><div class="cta reveal"><p class="kicker">Demo project</p><h2>Gebaut, um <span>Vertrauen</span> zu erzeugen.</h2><p>Responsive, schnell und auf lokale Kundengewinnung ausgerichtet.</p><a class="button" href="../business-solutions.html">Weitere Beispiele</a></div></div></section></main>
-<footer><div class="container">Demo von SD Business Solutions · Kein reales Unternehmen</div></footer><script src="../business-solutions.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MalerPro Sachsen – hochwertige Malerarbeiten, Fassaden und kreative Raumgestaltung. Demo von SD Business Solutions.">
+  <title>MalerPro Sachsen | Räume mit Charakter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#171310;
+      --bg2:#211a15;
+      --cream:#f6efe5;
+      --sand:#d9c4a8;
+      --terracotta:#c56f4e;
+      --rust:#9c4f37;
+      --gold:#d8b577;
+      --text:#fffaf4;
+      --muted:#c8bbae;
+      --surface:rgba(255,255,255,.07);
+      --line:rgba(255,255,255,.14);
+      --shadow:0 28px 80px rgba(0,0,0,.38);
+      --radius:30px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"DM Sans",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 88% 8%,rgba(197,111,78,.17),transparent 28%),
+        radial-gradient(circle at 10% 32%,rgba(216,181,119,.08),transparent 25%),
+        linear-gradient(180deg,#171310,#211a15 48%,#171310);
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background:
+        repeating-linear-gradient(90deg,rgba(255,255,255,.018) 0,rgba(255,255,255,.018) 1px,transparent 1px,transparent 54px);
+      mask-image:linear-gradient(to bottom,black,transparent 90%);
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,input,textarea,select{font:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+
+    .demo-bar{
+      padding:9px 15px;text-align:center;
+      background:linear-gradient(90deg,var(--terracotta),var(--gold));
+      color:#24140e;font-size:.74rem;font-weight:800;
+      letter-spacing:.08em;text-transform:uppercase;
+    }
+
+    .nav{position:absolute;top:48px;left:0;right:0;z-index:20}
+    .nav-inner{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:17px 21px;border:1px solid var(--line);
+      border-radius:22px;background:rgba(23,19,16,.66);
+      backdrop-filter:blur(18px);box-shadow:0 14px 40px rgba(0,0,0,.25)
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .mark{
+      width:42px;height:42px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(145deg,var(--cream),var(--gold));
+      color:#351b12;font:700 1.1rem "Playfair Display";
+      box-shadow:0 10px 26px rgba(216,181,119,.22)
+    }
+    .brand small{
+      display:block;color:var(--muted);font-size:.66rem;
+      letter-spacing:.14em;text-transform:uppercase
+    }
+    .nav-links{display:flex;align-items:center;gap:23px;font-size:.9rem}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta,.btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border-radius:999px;font-weight:800;transition:.25s ease
+    }
+    .nav-cta{padding:12px 18px;background:var(--cream);color:#2c1811}
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:1.5rem}
+
+    .hero{
+      min-height:100svh;display:flex;align-items:end;position:relative;overflow:hidden;
+      background:
+        linear-gradient(90deg,rgba(20,15,12,.94),rgba(20,15,12,.64) 52%,rgba(20,15,12,.14)),
+        linear-gradient(0deg,var(--bg),transparent 34%),
+        url("https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=2200&q=88") center/cover;
+    }
+    .hero::after{
+      content:"";position:absolute;right:-130px;top:120px;width:610px;height:610px;border-radius:50%;
+      border:1px solid rgba(216,181,119,.23);
+      box-shadow:0 0 0 75px rgba(197,111,78,.035),0 0 0 150px rgba(197,111,78,.02)
+    }
+    .hero-content{position:relative;z-index:2;padding:220px 0 95px;max-width:870px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:9px 13px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(255,255,255,.055);
+      color:var(--gold);font-size:.77rem;font-weight:800;
+      letter-spacing:.1em;text-transform:uppercase
+    }
+    .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--terracotta);box-shadow:0 0 16px var(--terracotta)}
+    h1,h2,h3{margin:0}
+    h1,h2{font-family:"Playfair Display",serif}
+    h1{font-size:clamp(3.8rem,8vw,7.4rem);line-height:.94;letter-spacing:-.045em;margin:24px 0}
+    .hero p{max-width:670px;font-size:1.18rem;line-height:1.75;color:#e7ddd3}
+    .actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+    .btn{padding:16px 23px}
+    .primary{background:linear-gradient(145deg,var(--gold),var(--terracotta));color:#2b160f;box-shadow:0 16px 40px rgba(197,111,78,.24)}
+    .secondary{border:1px solid var(--line);background:rgba(255,255,255,.055)}
+    .btn:hover{transform:translateY(-3px)}
+    .hero-notes{
+      display:grid;grid-template-columns:repeat(3,1fr);
+      margin-top:65px;border:1px solid var(--line);
+      border-radius:20px;overflow:hidden;background:var(--line);gap:1px
+    }
+    .hero-note{padding:18px;background:rgba(23,19,16,.75);backdrop-filter:blur(16px)}
+    .hero-note strong{display:block;font-size:1rem}
+    .hero-note span{color:var(--gold);font-size:.78rem}
+
+    section{padding:108px 0}
+    .section-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:47px}
+    .section-head>div{max-width:760px}
+    .kicker{color:var(--gold);font-size:.77rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:13px}
+    h2{font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.03;letter-spacing:-.04em}
+    h3{font-weight:700}
+    .section-head p,.copy{color:var(--muted);line-height:1.75}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:30px;border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.03));
+      box-shadow:var(--shadow);transition:.3s ease
+    }
+    .card:hover{transform:translateY(-7px);border-color:rgba(216,181,119,.38)}
+    .icon{
+      width:56px;height:56px;border-radius:18px;display:grid;place-items:center;
+      background:rgba(197,111,78,.13);border:1px solid rgba(216,181,119,.27);
+      margin-bottom:42px;font-size:1.35rem;color:var(--gold)
+    }
+    .card h3{font-size:1.35rem;margin-bottom:11px}
+    .card p{color:var(--muted);line-height:1.7;margin:0}
+
+    .services{background:linear-gradient(180deg,transparent,rgba(255,255,255,.025),transparent)}
+    .service-card{
+      min-height:345px;position:relative;overflow:hidden;
+      border-radius:var(--radius);padding:28px;
+      display:flex;flex-direction:column;justify-content:flex-end;
+      border:1px solid var(--line);isolation:isolate;box-shadow:var(--shadow)
+    }
+    .service-card::before{
+      content:"";position:absolute;inset:0;z-index:-2;
+      background:linear-gradient(0deg,rgba(24,16,12,.96),rgba(24,16,12,.06)),var(--img) center/cover;
+      transition:.7s ease
+    }
+    .service-card::after{
+      content:"";position:absolute;inset:0;z-index:-1;
+      background:linear-gradient(145deg,rgba(197,111,78,.09),transparent)
+    }
+    .service-card:hover::before{transform:scale(1.07)}
+    .service-card small{color:var(--gold);font-weight:800;letter-spacing:.1em}
+    .service-card h3{font-size:1.55rem;margin:8px 0}
+    .service-card p{color:#ddd1c6;line-height:1.6;margin:0}
+
+    .palette-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+    .palette{
+      display:grid;grid-template-columns:repeat(4,1fr);height:470px;
+      border-radius:32px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)
+    }
+    .swatch{position:relative;display:flex;align-items:flex-end;padding:18px;transition:.35s}
+    .swatch:hover{flex:1.45}
+    .swatch span{
+      writing-mode:vertical-rl;transform:rotate(180deg);
+      font-size:.75rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+      text-shadow:0 2px 10px rgba(0,0,0,.35)
+    }
+    .palette-list{display:grid;gap:14px;margin-top:28px}
+    .palette-item{display:flex;gap:12px;align-items:flex-start}
+    .palette-item::before{
+      content:"";width:26px;height:26px;flex:0 0 26px;border-radius:50%;
+      background:linear-gradient(145deg,var(--gold),var(--terracotta))
+    }
+
+    .projects-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+    .project{
+      min-height:340px;position:relative;overflow:hidden;
+      border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;display:flex;align-items:flex-end
+    }
+    .project:first-child{grid-row:span 2;min-height:698px}
+    .project::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(0deg,rgba(24,16,12,.94),transparent 60%),var(--img) center/cover;
+      transition:.7s ease
+    }
+    .project:hover::before{transform:scale(1.05)}
+    .project-info{position:relative}
+    .project small{color:var(--gold);font-weight:800;letter-spacing:.08em}
+    .project h3{font:700 1.7rem "Playfair Display";margin-top:7px}
+
+    .process{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .step{
+      padding:25px 20px;border:1px solid var(--line);
+      border-radius:22px;background:rgba(255,255,255,.035)
+    }
+    .step-number{
+      width:38px;height:38px;border-radius:13px;display:grid;place-items:center;
+      background:rgba(197,111,78,.14);color:var(--gold);font-weight:800;margin-bottom:22px
+    }
+    .step h3{font-size:1.05rem;margin-bottom:8px}
+    .step p{margin:0;color:var(--muted);font-size:.87rem;line-height:1.6}
+
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+    .about-photo{
+      min-height:620px;border-radius:34px;border:1px solid var(--line);
+      background:linear-gradient(0deg,rgba(24,16,12,.25),transparent),
+      url("https://images.unsplash.com/photo-1572297870735-d86b3a6d1a29?auto=format&fit=crop&w=1400&q=88") center/cover;
+      box-shadow:var(--shadow)
+    }
+    .about-copy p{color:var(--muted);line-height:1.8}
+    .quote{
+      margin:28px 0;padding:24px;border-left:3px solid var(--terracotta);
+      background:rgba(197,111,78,.08);border-radius:0 18px 18px 0;
+      font:700 1.35rem "Playfair Display"
+    }
+    .values{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .value{padding:16px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);font-weight:700}
+
+    .reviews .stars{color:var(--gold);letter-spacing:.14em;margin-bottom:23px}
+    .reviews blockquote{margin:0 0 25px;line-height:1.75;color:#efe6dc}
+    .reviews footer{color:var(--muted);font-size:.85rem}
+
+    .faq{max-width:900px;margin:auto}
+    details{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;list-style:none;padding:24px 4px;font-weight:700;display:flex;justify-content:space-between}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--gold);font-size:1.4rem}
+    details[open] summary::after{content:"–"}
+    details p{color:var(--muted);line-height:1.75;margin:0;padding:0 4px 24px}
+
+    .contact-shell{
+      display:grid;grid-template-columns:.85fr 1.15fr;gap:20px;
+      padding:20px;border:1px solid var(--line);border-radius:36px;
+      background:linear-gradient(145deg,rgba(197,111,78,.11),rgba(255,255,255,.03));
+      box-shadow:var(--shadow)
+    }
+    .contact-copy{padding:38px}
+    .contact-copy p{color:var(--muted);line-height:1.75}
+    .contact-data{display:grid;gap:12px;margin-top:28px}
+    .contact-data div{padding:13px 0;border-bottom:1px solid var(--line)}
+    .contact-data small{display:block;color:var(--muted)}
+    form{background:rgba(24,16,12,.56);border:1px solid var(--line);border-radius:26px;padding:28px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:grid;gap:8px}
+    .field.full{grid-column:1/-1}
+    label{font-size:.82rem;font-weight:700}
+    input,select,textarea{
+      width:100%;border:1px solid var(--line);border-radius:14px;
+      background:rgba(255,255,255,.06);color:white;padding:14px 15px;outline:none
+    }
+    select option{color:#111}
+    textarea{min-height:125px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+    .note{color:var(--muted);font-size:.73rem;line-height:1.5}
+    .success{display:none;margin-top:13px;padding:13px;border-radius:12px;background:rgba(197,111,78,.15);color:var(--gold)}
+
+    footer{padding:44px 0 28px;border-top:1px solid var(--line)}
+    .footer-top{display:flex;justify-content:space-between;align-items:center;gap:28px}
+    .footer-links{display:flex;gap:19px;color:var(--muted);font-size:.88rem}
+    .footer-bottom{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);color:#8a7c70;font-size:.77rem}
+    .reveal{opacity:0;transform:translateY(24px);transition:.7s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media(max-width:920px){
+      .nav-links{display:none;position:absolute;top:82px;left:20px;right:20px;padding:22px;background:#211913;border:1px solid var(--line);border-radius:20px;flex-direction:column;align-items:flex-start}
+      .nav-links.open{display:flex}
+      .menu-btn{display:block}
+      .nav-cta{display:none}
+      .grid3{grid-template-columns:1fr 1fr}
+      .palette-grid,.projects-grid,.about-grid,.contact-shell{grid-template-columns:1fr}
+      .project:first-child{grid-row:auto;min-height:460px}
+      .process{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .container{width:min(100% - 24px,1180px)}
+      .demo-bar{font-size:.65rem}
+      .nav{top:51px}
+      .nav-inner{padding:13px 14px}
+      .hero-content{padding:188px 0 68px}
+      h1{font-size:3.55rem}
+      .hero-notes{grid-template-columns:1fr}
+      section{padding:78px 0}
+      .section-head{display:block}
+      .grid3,.process,.values{grid-template-columns:1fr}
+      .palette{height:390px}
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+      .footer-top{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-bar">Design-Demo von SD Business Solutions · Kein reales Unternehmen</div>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <span class="mark">M</span>
+        <span>MalerPro Sachsen<small>Farbe · Oberfläche · Raumgefühl</small></span>
+      </a>
+      <button class="menu-btn" aria-label="Menü öffnen">☰</button>
+      <div class="nav-links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#farben">Farbkonzept</a>
+        <a href="#projekte">Projekte</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="../business-solutions.html">← SD Portfolio</a>
+      </div>
+      <a class="nav-cta" href="#kontakt">Projekt anfragen</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-content">
+      <span class="eyebrow">Handwerk mit Stil</span>
+      <h1>Räume mit<br>Charakter.</h1>
+      <p>Hochwertige Malerarbeiten, kreative Wandgestaltung und saubere Oberflächen für Wohnungen, Häuser und Gewerberäume.</p>
+      <div class="actions">
+        <a class="btn primary" href="#kontakt">Kostenlos beraten lassen →</a>
+        <a class="btn secondary" href="#projekte">Projekte entdecken</a>
+      </div>
+      <div class="hero-notes">
+        <div class="hero-note"><span>✓</span><strong>Saubere Vorbereitung</strong></div>
+        <div class="hero-note"><span>✓</span><strong>Hochwertige Materialien</strong></div>
+        <div class="hero-note"><span>✓</span><strong>Präzise Übergabe</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Unser Anspruch</div>
+            <h2>Farbe verändert nicht nur Wände. Sie verändert Atmosphäre.</h2>
+          </div>
+          <p>Wir verbinden sauberes Handwerk mit einem sicheren Gespür für Stil, Materialien und Wirkung.</p>
+        </div>
+        <div class="grid3">
+          <article class="card reveal"><div class="icon">◒</div><h3>Individuelle Beratung</h3><p>Farben und Oberflächen passend zu Raum, Licht und gewünschter Stimmung.</p></article>
+          <article class="card reveal"><div class="icon">✦</div><h3>Saubere Ausführung</h3><p>Sorgfältige Vorbereitung, präzise Kanten und ein gleichmäßiges Ergebnis.</p></article>
+          <article class="card reveal"><div class="icon">▧</div><h3>Hochwertige Wirkung</h3><p>Ein Finish, das Räume ruhiger, moderner und wertiger erscheinen lässt.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="leistungen">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">Unsere Leistungen</div><h2>Oberflächen, die überzeugen.</h2></div>
+          <p>Für private Wohnräume, Immobilien, Büros und gewerbliche Flächen.</p>
+        </div>
+        <div class="grid3">
+          <article class="service-card reveal" style="--img:url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=900&q=84')"><small>01</small><h3>Innenanstriche</h3><p>Saubere Wand- und Deckenanstriche für ein frisches Raumgefühl.</p></article>
+          <article class="service-card reveal" style="--img:url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=900&q=84')"><small>02</small><h3>Fassadenarbeiten</h3><p>Schutz und optische Aufwertung für die Außenwirkung Ihrer Immobilie.</p></article>
+          <article class="service-card reveal" style="--img:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=84')"><small>03</small><h3>Farbkonzepte</h3><p>Abgestimmte Farbwelten für harmonische und moderne Räume.</p></article>
+          <article class="service-card reveal" style="--img:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=900&q=84')"><small>04</small><h3>Spachtelarbeiten</h3><p>Glatte, gleichmäßige Untergründe als Basis für hochwertige Ergebnisse.</p></article>
+          <article class="service-card reveal" style="--img:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=84')"><small>05</small><h3>Renovierungen</h3><p>Komplette optische Erneuerung von Wohnungen und Gewerberäumen.</p></article>
+          <article class="service-card reveal" style="--img:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=84')"><small>06</small><h3>Akzentwände</h3><p>Gezielte Gestaltung für besondere Räume und starke Blickpunkte.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="farben">
+      <div class="container palette-grid">
+        <div class="reveal">
+          <div class="kicker">Farbe & Wirkung</div>
+          <h2>Die richtige Farbe beginnt mit dem richtigen Gefühl.</h2>
+          <p class="copy">Ein gutes Farbkonzept berücksichtigt Licht, Raumgröße, Einrichtung und die gewünschte Atmosphäre.</p>
+          <div class="palette-list">
+            <div class="palette-item"><div><strong>Warm & einladend</strong><br><span class="copy">Für Wohnräume mit Ruhe und Behaglichkeit.</span></div></div>
+            <div class="palette-item"><div><strong>Klar & modern</strong><br><span class="copy">Für Büros, Neubauten und minimalistische Räume.</span></div></div>
+            <div class="palette-item"><div><strong>Ausdrucksstark</strong><br><span class="copy">Für Akzentflächen und individuelle Gestaltung.</span></div></div>
+          </div>
+        </div>
+        <div class="palette reveal">
+          <div class="swatch" style="background:#e8dfd1"><span style="color:#3d312a">Leinen</span></div>
+          <div class="swatch" style="background:#c7ad8c"><span style="color:#34251d">Sand</span></div>
+          <div class="swatch" style="background:#b86649"><span>Terrakotta</span></div>
+          <div class="swatch" style="background:#43312a"><span>Espresso</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projekte">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">Ausgewählte Projekte</div><h2>Vorher gewöhnlich. Nachher besonders.</h2></div>
+          <p>Beispielhafte Projektdarstellungen für diese Demo-Website.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project reveal" style="--img:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1500&q=88')"><div class="project-info"><small>WOHNUNG · DRESDEN</small><h3>Warme Töne für moderne Ruhe</h3></div></article>
+          <article class="project reveal" style="--img:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=86')"><div class="project-info"><small>EINFAMILIENHAUS</small><h3>Helles, klares Raumgefühl</h3></div></article>
+          <article class="project reveal" style="--img:url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=86')"><div class="project-info"><small>BÜROFLÄCHE</small><h3>Professionelle Atmosphäre</h3></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">Unser Ablauf</div><h2>Vom ersten Farbton bis zur sauberen Übergabe.</h2></div>
+          <p>Klare Schritte sorgen für planbare Ergebnisse.</p>
+        </div>
+        <div class="process">
+          <article class="step reveal"><div class="step-number">01</div><h3>Beratung</h3><p>Wünsche, Räume und Stilrichtung besprechen.</p></article>
+          <article class="step reveal"><div class="step-number">02</div><h3>Vorbereitung</h3><p>Flächen schützen, Untergrund prüfen und vorbereiten.</p></article>
+          <article class="step reveal"><div class="step-number">03</div><h3>Ausführung</h3><p>Sauber, gleichmäßig und fachgerecht arbeiten.</p></article>
+          <article class="step reveal"><div class="step-number">04</div><h3>Übergabe</h3><p>Gemeinsam prüfen und ordentlich abschließen.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-uns">
+      <div class="container about-grid">
+        <div class="about-photo reveal"></div>
+        <div class="about-copy reveal">
+          <div class="kicker">Über uns</div>
+          <h2>Gutes Handwerk erkennt man am Ergebnis.</h2>
+          <div class="quote">Wir streichen nicht einfach Wände. Wir gestalten Räume, in denen Menschen sich wohlfühlen.</div>
+          <p>MalerPro Sachsen steht in dieser Demo für einen modernen Malerbetrieb mit Sinn für Präzision, Ästhetik und persönliche Beratung.</p>
+          <p>Unser Ziel ist ein Ergebnis, das sauber aussieht, lange hält und zum Charakter des Raumes passt.</p>
+          <div class="values">
+            <div class="value">✓ Persönliche Beratung</div>
+            <div class="value">✓ Saubere Vorbereitung</div>
+            <div class="value">✓ Hochwertige Materialien</div>
+            <div class="value">✓ Verlässliche Termine</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <div><div class="kicker">Kundenstimmen</div><h2>Ein Ergebnis, das in Erinnerung bleibt.</h2></div>
+          <p>Fiktive Musterbewertungen für diese Design-Demo.</p>
+        </div>
+        <div class="grid3">
+          <article class="card reveal"><div class="stars">★★★★★</div><blockquote>„Die Farbberatung war hervorragend. Die Räume wirken jetzt deutlich ruhiger und hochwertiger.“</blockquote><footer>Musterbewertung · Privatkunde</footer></article>
+          <article class="card reveal"><div class="stars">★★★★★</div><blockquote>„Sehr sauber gearbeitet und alles ordentlich hinterlassen. Die Kommunikation war unkompliziert.“</blockquote><footer>Musterbewertung · Eigentümerin</footer></article>
+          <article class="card reveal"><div class="stars">★★★★★</div><blockquote>„Unser Büro wirkt jetzt moderner und professioneller. Genau die Wirkung, die wir gesucht haben.“</blockquote><footer>Musterbewertung · Gewerbekunde</footer></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container faq">
+        <div class="section-head reveal"><div><div class="kicker">Häufige Fragen</div><h2>Einfach erklärt.</h2></div></div>
+        <details class="reveal"><summary>Übernehmen Sie auch kleinere Räume?</summary><p>Ja. Sowohl einzelne Zimmer als auch komplette Wohnungen, Häuser und Gewerbeflächen können gestaltet werden.</p></details>
+        <details class="reveal"><summary>Unterstützen Sie bei der Farbauswahl?</summary><p>Ja. Farben können passend zu Licht, Einrichtung und gewünschter Wirkung gemeinsam ausgewählt werden.</p></details>
+        <details class="reveal"><summary>Werden Möbel und Böden geschützt?</summary><p>Eine sorgfältige Abdeckung und Vorbereitung gehört zu einem professionellen Ablauf.</p></details>
+        <details class="reveal"><summary>Sind Fassadenarbeiten möglich?</summary><p>Ja. Die Demo zeigt auch Fassadenanstriche und optische Aufwertungen im Außenbereich.</p></details>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-shell reveal">
+        <div class="contact-copy">
+          <div class="kicker">Projekt anfragen</div>
+          <h2>Welche Wirkung soll Ihr Raum bekommen?</h2>
+          <p>Beschreiben Sie kurz die Fläche und Ihre Vorstellungen. In einer echten Kundenwebsite würde diese Anfrage direkt an den Betrieb gesendet.</p>
+          <div class="contact-data">
+            <div><small>Telefon</small><strong>+49 000 0000000</strong></div>
+            <div><small>E-Mail</small><strong>kontakt@malerpro-sachsen-demo.de</strong></div>
+            <div><small>Region</small><strong>Meißen · Dresden · Sachsen</strong></div>
+            <div><small>Öffnungszeiten</small><strong>Mo–Fr · 08:00–17:00 Uhr</strong></div>
+          </div>
+        </div>
+        <form id="demoForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Name</label><input id="name" required placeholder="Ihr Name"></div>
+            <div class="field"><label for="email">E-Mail</label><input id="email" type="email" required placeholder="name@beispiel.de"></div>
+            <div class="field"><label for="type">Leistung</label><select id="type"><option>Innenanstrich</option><option>Fassade</option><option>Renovierung</option><option>Spachtelarbeiten</option><option>Farbberatung</option></select></div>
+            <div class="field"><label for="area">Fläche ungefähr</label><input id="area" placeholder="z. B. 80 m²"></div>
+            <div class="field full"><label for="message">Projektbeschreibung</label><textarea id="message" required placeholder="Beschreiben Sie kurz Ihre Räume und Wünsche..."></textarea></div>
+          </div>
+          <p class="note">Demo-Formular: Es werden keine Daten versendet oder gespeichert.</p>
+          <button class="btn primary" type="submit">Anfrage simulieren →</button>
+          <div class="success" id="success">Vielen Dank. Dies war eine Demo – die Anfrage wurde nicht versendet.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <a class="brand" href="#top"><span class="mark">M</span><span>MalerPro Sachsen<small>Design-Demo</small></span></a>
+        <div class="footer-links">
+          <a href="#leistungen">Leistungen</a>
+          <a href="#farben">Farbkonzept</a>
+          <a href="#ueber-uns">Über uns</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="../business-solutions.html">SD Business Solutions</a>
+        </div>
+      </div>
+      <div class="footer-bottom">© 2026 MalerPro Sachsen · Demonstrationsprojekt · Konzept & Design: SD Business Solutions</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn=document.querySelector('.menu-btn');
+    const navLinks=document.querySelector('.nav-links');
+    menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    document.getElementById('demoForm').addEventListener('submit',e=>{
+      e.preventDefault();
+      document.getElementById('success').style.display='block';
+    });
+  </script>
+</body>
+</html>
