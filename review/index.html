@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teilen Sie Ihre Erfahrung mit Suarez Dienstleistungen. Ihre ehrliche Meinung hilft uns, unsere Arbeit weiter zu verbessern.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#090909">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self' https://formspree.io; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <link rel="canonical" href="https://suarezdienst.de/review/">
+  <link rel="icon" href="../assets/sd-logo.jpg">
+  <title>Ihre Meinung | Suarez Dienstleistungen</title>
+  <style>
+    :root{--bg:#090909;--panel:#121212;--panel2:#181818;--gold:#d6ad55;--gold2:#f0d58a;--text:#f6f1e8;--muted:#b9b2a7;--line:#332b1d;--danger:#ff8a8a;--ok:#79d6a3}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#17130d 0,#090909 38%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,textarea{font:inherit}.wrap{width:min(820px,92%);margin:0 auto;padding:24px 0 54px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none}.brand img{width:66px;height:66px;object-fit:cover;border-radius:50%}.brand h1{font-size:clamp(17px,3vw,25px);margin:0}.brand p{margin:4px 0 0;color:var(--gold);font-size:12px;letter-spacing:.11em;text-transform:uppercase}.home-link{color:var(--gold2);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:10px 14px;font-size:13px;font-weight:800;white-space:nowrap}
+    .hero,.card{background:linear-gradient(180deg,rgba(255,255,255,.038),rgba(255,255,255,.015));border:1px solid var(--line);box-shadow:0 20px 60px rgba(0,0,0,.28);border-radius:24px}.hero{padding:30px;margin-bottom:18px;text-align:center}.eyebrow{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.15em;font-weight:850}.hero h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(31px,6vw,52px);margin:9px 0 12px;line-height:1.05}.hero p{color:var(--muted);font-size:17px;line-height:1.65;margin:0 auto;max-width:650px}.card{padding:28px}.field{margin-top:24px}.field:first-of-type{margin-top:0}.field label,.group-title{display:block;font-weight:800;margin:0 0 9px}.optional{color:var(--muted);font-size:12px;font-weight:600}.required:after{content:" *";color:var(--gold)}input,textarea{width:100%;background:#0e0e0e;border:1px solid #3b3427;color:var(--text);border-radius:14px;padding:14px 15px;outline:none}input:focus,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(214,173,85,.12)}textarea{min-height:150px;resize:vertical}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.full{grid-column:1/-1}
+    .rating{display:flex;justify-content:center;flex-direction:row-reverse;gap:5px;padding:8px 0 4px}.rating input{position:absolute;opacity:0;pointer-events:none}.rating label{cursor:pointer;color:#4b4335;font-size:clamp(42px,9vw,62px);line-height:1;transition:transform .15s ease,color .15s ease;text-shadow:0 2px 12px rgba(0,0,0,.35)}.rating label:hover,.rating label:hover~label,.rating input:checked~label{color:var(--gold2)}.rating label:hover{transform:scale(1.08)}.rating-text{text-align:center;color:var(--muted);min-height:24px;margin-top:4px;font-weight:700}.consents{display:grid;gap:11px}.option{display:flex;align-items:flex-start;gap:11px;background:#0e0e0e;border:1px solid #332d23;border-radius:14px;padding:14px;cursor:pointer;color:var(--muted);line-height:1.45}.option input{width:auto;margin-top:3px;accent-color:var(--gold)}.privacy{font-size:13px;color:var(--muted);line-height:1.55}.privacy a{color:var(--gold2)}.submit{width:100%;border:0;border-radius:14px;padding:15px 20px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#17120a;font-weight:900;cursor:pointer;margin-top:25px}.submit:hover{transform:translateY(-1px)}.submit:disabled{opacity:.55;cursor:not-allowed;transform:none}.error{display:none;color:var(--danger);text-align:center;margin:14px 0 0}.success{display:none;text-align:center;padding:28px 10px}.success .mark{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;border:1px solid rgba(121,214,163,.5);color:var(--ok);font-size:34px}.success h3{font-family:Georgia,"Times New Roman",serif;font-size:34px;font-weight:500;margin:0 0 10px}.success p{color:var(--muted);line-height:1.65;max-width:560px;margin:0 auto}.footer{text-align:center;color:#837b70;font-size:13px;margin-top:22px}.footer a{color:#a69d8f;text-underline-offset:3px}.trap{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+    @media(max-width:650px){.topbar{align-items:flex-start;flex-wrap:wrap}.brand img{width:54px;height:54px}.home-link{padding:9px 12px}.hero,.card{border-radius:18px;padding:20px}.grid{grid-template-columns:1fr}.rating{gap:1px}.option{padding:13px}.submit{position:sticky;bottom:10px;box-shadow:0 10px 30px rgba(0,0,0,.45)}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topbar">
+      <a class="brand" href="../" aria-label="Suarez Dienstleistungen Startseite">
+        <img src="../assets/sd-logo.jpg" alt="Suarez Dienstleistungen Logo">
+        <div><h1>Suarez Dienstleistungen</h1><p>Vertrauen durch Qualität</p></div>
+      </a>
+      <a class="home-link" href="../">Zur Startseite</a>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Die Erfahrung unserer Kundinnen und Kunden</div>
+      <h2>Ihre Meinung zählt</h2>
+      <p>Vielen Dank, dass Sie sich einen Moment Zeit nehmen. Ihre ehrliche Rückmeldung hilft uns, unsere Qualität weiterzuentwickeln und anderen Menschen eine verlässliche Entscheidung zu ermöglichen.</p>
+    </section>
+
+    <form id="reviewForm" class="card" action="https://formspree.io/f/xbdnzzwa" method="POST" accept-charset="UTF-8" novalidate>
+      <input type="hidden" name="_subject" value="Neue Kundenbewertung | Suarez Dienstleistungen">
+      <input type="hidden" name="bewertung_token" id="reviewToken" value="">
+      <input type="hidden" name="quelle" value="suarezdienst.de/review">
+      <input type="text" name="website" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div id="formContent">
+        <div class="field">
+          <span class="group-title required">Wie zufrieden waren Sie mit unserem Service?</span>
+          <div class="rating" role="radiogroup" aria-label="Bewertung von 1 bis 5 Sternen">
+            <input type="radio" id="star5" name="sterne" value="5" required><label for="star5" title="5 Sterne" aria-label="5 Sterne">★</label>
+            <input type="radio" id="star4" name="sterne" value="4"><label for="star4" title="4 Sterne" aria-label="4 Sterne">★</label>
+            <input type="radio" id="star3" name="sterne" value="3"><label for="star3" title="3 Sterne" aria-label="3 Sterne">★</label>
+            <input type="radio" id="star2" name="sterne" value="2"><label for="star2" title="2 Sterne" aria-label="2 Sterne">★</label>
+            <input type="radio" id="star1" name="sterne" value="1"><label for="star1" title="1 Stern" aria-label="1 Stern">★</label>
+          </div>
+          <div class="rating-text" id="ratingText">Bitte wählen Sie eine Bewertung.</div>
+        </div>
+
+        <div class="field">
+          <label class="required" for="comment">Wie war Ihre Erfahrung?</label>
+          <textarea id="comment" name="kommentar" required minlength="10" maxlength="1800" placeholder="Was hat Ihnen besonders gefallen? Wie haben Sie Qualität, Zuverlässigkeit und Kommunikation erlebt?"></textarea>
+        </div>
+
+        <div class="field grid">
+          <div>
+            <label for="customerName">Ihr Name <span class="optional">(optional)</span></label>
+            <input id="customerName" name="name" autocomplete="name" placeholder="z. B. Maria B.">
+          </div>
+          <div>
+            <label for="city">Ort <span class="optional">(optional)</span></label>
+            <input id="city" name="ort" autocomplete="address-level2" placeholder="z. B. Dresden">
+          </div>
+          <div class="full">
+            <label for="service">Erbrachte Leistung <span class="optional">(optional)</span></label>
+            <input id="service" name="leistung" placeholder="z. B. Grundreinigung">
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="group-title">Veröffentlichung</span>
+          <div class="consents">
+            <label class="option"><input type="checkbox" name="name_veroeffentlichen" value="ja"><span>Mein angegebener Name darf zusammen mit der Bewertung veröffentlicht werden.</span></label>
+            <label class="option"><input type="checkbox" name="ort_veroeffentlichen" value="ja"><span>Mein angegebener Ort darf zusammen mit der Bewertung veröffentlicht werden.</span></label>
+          </div>
+        </div>
+
+        <div class="field privacy">
+          <label class="option"><input id="privacyConsent" type="checkbox" name="datenschutz" value="akzeptiert" required><span>Ich stimme der Verarbeitung meiner Angaben zur Bearbeitung und Prüfung dieser Bewertung zu. Eine Veröffentlichung erfolgt nur im Umfang meiner oben erteilten Einwilligungen. Weitere Informationen finden Sie in der <a href="../datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</span></label>
+        </div>
+
+        <button class="submit" id="submitButton" type="submit">Bewertung senden</button>
+        <p class="error" id="errorMessage">Die Bewertung konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns per E-Mail.</p>
+      </div>
+
+      <section class="success" id="successBox" aria-live="polite">
+        <div class="mark">✓</div>
+        <h3>Vielen Dank für Ihr Vertrauen.</h3>
+        <p>Ihre Bewertung wurde erfolgreich übermittelt und wird vor einer möglichen Veröffentlichung geprüft. Ihre Rückmeldung hilft uns, unseren Service weiter zu verbessern.</p>
+        <p style="margin-top:20px"><a class="home-link" href="../">Zur Startseite</a></p>
+      </section>
+    </form>
+
+    <div class="footer">© 2026 Suarez Dienstleistungen · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a></div>
+  </main>
+
+  <script>
+    const form = document.getElementById('reviewForm');
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token') || '';
+    document.getElementById('reviewToken').value = token.slice(0, 120);
+
+    const prefill = {
+      customerName: params.get('name'),
+      city: params.get('city'),
+      service: params.get('service')
+    };
+    Object.entries(prefill).forEach(([id,value]) => {
+      if (value) document.getElementById(id).value = value.slice(0, 180);
+    });
+
+    const ratingCopy = {
+      1:'Leider nicht zufrieden',
+      2:'Eher nicht zufrieden',
+      3:'Zufrieden',
+      4:'Sehr zufrieden',
+      5:'Ausgezeichnet'
+    };
+    document.querySelectorAll('input[name="sterne"]').forEach(input => {
+      input.addEventListener('change', () => {
+        document.getElementById('ratingText').textContent = `${input.value} von 5 – ${ratingCopy[input.value]}`;
+      });
+    });
+
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      const selectedRating = form.querySelector('input[name="sterne"]:checked');
+      if (!selectedRating) {
+        document.getElementById('ratingText').textContent = 'Bitte wählen Sie zuerst 1 bis 5 Sterne.';
+        document.getElementById('ratingText').style.color = 'var(--danger)';
+        return;
+      }
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      if (form.elements.website.value) return;
+
+      const button = document.getElementById('submitButton');
+      const error = document.getElementById('errorMessage');
+      button.disabled = true;
+      button.textContent = 'Wird gesendet …';
+      error.style.display = 'none';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) throw new Error('submit');
+        document.getElementById('formContent').style.display = 'none';
+        document.getElementById('successBox').style.display = 'block';
+        window.scrollTo({top:0,behavior:'smooth'});
+      } catch (_) {
+        error.style.display = 'block';
+        button.disabled = false;
+        button.textContent = 'Bewertung senden';
+      }
+    });
+  </script>
+</body>
+</html>
