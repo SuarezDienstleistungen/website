@@ -1,0 +1,11 @@
+1. Abre el repositorio "website" en GitHub.
+2. En la raíz, al mismo nivel que index.html, crea/sube la carpeta "review" completa.
+3. Dentro de review deben verse exactamente:
+   - index.html
+   - review.css
+   - review.js
+4. Haz Commit changes.
+5. Espera 1–3 minutos.
+6. Abre: https://suarezdienst.de/review/
+
+No subas la carpeta exterior "review_delivery". Sube solamente la carpeta "review".
