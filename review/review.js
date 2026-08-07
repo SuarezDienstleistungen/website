@@ -1,18 +1,15 @@
 (() => {
+  const SUPABASE_URL = 'https://vbmxughmhctjphcmmqcz.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_ccZ8NsrcLySLjVLu4Q4A0A_35ixUZ2I';
+  const FORMSPREE_URL = 'https://formspree.io/f/xrenakak';
+
   const form = document.getElementById('reviewForm');
   const reviewCard = document.getElementById('reviewCard');
   const successCard = document.getElementById('successCard');
   const ratingField = document.getElementById('ratingField');
   const ratingError = document.getElementById('ratingError');
   const stars = Array.from(document.querySelectorAll('.star'));
-
-  const params = new URLSearchParams(window.location.search);
-
-  if (params.get('sent') === '1') {
-    reviewCard.hidden = true;
-    successCard.hidden = false;
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
+  const submitButton = form?.querySelector('button[type="submit"]');
 
   const setRating = (rating) => {
     ratingField.value = String(rating);
@@ -41,17 +38,89 @@
     });
   });
 
-  form.addEventListener('submit', (event) => {
+  const showSuccess = () => {
+    reviewCard.hidden = true;
+    successCard.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const sendFormspreeCopy = async (formData) => {
+    try {
+      await fetch(FORMSPREE_URL, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      });
+    } catch (_) {
+      // Supabase ist die führende Quelle. Formspree bleibt nur als Benachrichtigungs-Backup.
+    }
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
     if (!ratingField.value) {
-      event.preventDefault();
       ratingError.textContent = 'Bitte wählen Sie eine Bewertung von 1 bis 5 Sternen.';
       stars[0].focus();
       return;
     }
 
     const honeypot = form.elements.website;
-    if (honeypot && honeypot.value) {
-      event.preventDefault();
+    if (honeypot && honeypot.value) return;
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get('name') || '').trim() || null,
+      email: String(data.get('email') || '').trim(),
+      city: String(data.get('ort') || '').trim() || null,
+      service: String(data.get('service') || '').trim() || null,
+      rating: Number(ratingField.value),
+      comment: String(data.get('kommentar') || '').trim(),
+      consent_publish: data.get('veroeffentlichung') === 'Erlaubt',
+      consent_name: data.get('name_veroeffentlichen') === 'Ja',
+      consent_city: data.get('ort_veroeffentlichen') === 'Ja',
+      privacy_accepted: data.get('datenschutz') === 'Akzeptiert',
+      status: 'pending'
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = 'Wird gesendet…';
+    ratingError.textContent = '';
+
+    try {
+      const response = await fetch(`${SUPABASE_URL}/rest/v1/reviews`, {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_PUBLISHABLE_KEY,
+          Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+          'Content-Type': 'application/json',
+          Prefer: 'return=minimal'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        const detail = await response.text();
+        throw new Error(detail || 'Supabase insert failed');
+      }
+
+      // E-Mail-Benachrichtigung als zusätzliche Kopie; ein Fehler hier blockiert die Bewertung nicht.
+      sendFormspreeCopy(data);
+      form.reset();
+      ratingField.value = '';
+      stars.forEach((star) => {
+        star.classList.remove('active');
+        star.setAttribute('aria-checked', 'false');
+      });
+      showSuccess();
+    } catch (error) {
+      console.error(error);
+      ratingError.textContent = 'Die Bewertung konnte gerade nicht gesendet werden. Bitte versuchen Sie es erneut.';
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Bewertung senden';
     }
   });
 })();

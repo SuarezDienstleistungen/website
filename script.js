@@ -63,31 +63,32 @@ if (promoModal) {
 }
 
 
-// Öffentliche Kundenbewertungen.
-// Die Datei reviews.json enthält ausschließlich bereits freigegebene öffentliche Daten.
+// Öffentliche Kundenbewertungen aus Supabase.
+// Es werden ausschließlich durch die sichere RPC-Funktion freigegebene Felder zurückgegeben.
 const reviewsGrid = document.getElementById('reviewsGrid');
 const reviewsEmpty = document.getElementById('reviewsEmpty');
 
 if (reviewsGrid && reviewsEmpty) {
+  const SUPABASE_URL = 'https://vbmxughmhctjphcmmqcz.supabase.co';
+  const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_ccZ8NsrcLySLjVLu4Q4A0A_35ixUZ2I';
   const escapeText = (value) => String(value ?? '').trim();
 
-  fetch('reviews.json', { cache: 'no-store' })
+  fetch(`${SUPABASE_URL}/rest/v1/rpc/get_public_reviews`, {
+    method: 'POST',
+    headers: {
+      apikey: SUPABASE_PUBLISHABLE_KEY,
+      Authorization: `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    body: '{}',
+    cache: 'no-store'
+  })
     .then((response) => {
       if (!response.ok) throw new Error('Bewertungen konnten nicht geladen werden.');
       return response.json();
     })
-    .then((data) => {
-      const reviews = Array.isArray(data.reviews) ? data.reviews : [];
-      const published = reviews.filter((review) =>
-        review &&
-        review.status === 'published' &&
-        Number.isInteger(review.rating) &&
-        review.rating >= 1 &&
-        review.rating <= 5 &&
-        typeof review.text === 'string' &&
-        review.text.trim().length > 0
-      );
-
+    .then((reviews) => {
+      const published = Array.isArray(reviews) ? reviews : [];
       if (!published.length) return;
 
       reviewsEmpty.hidden = true;
@@ -103,7 +104,7 @@ if (reviewsGrid && reviewsEmpty) {
         stars.textContent = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
 
         const quote = document.createElement('blockquote');
-        quote.textContent = escapeText(review.text);
+        quote.textContent = escapeText(review.comment);
 
         const meta = document.createElement('div');
         meta.className = 'review-public-meta';
@@ -112,7 +113,7 @@ if (reviewsGrid && reviewsEmpty) {
         name.textContent = escapeText(review.display_name) || 'Kundin / Kunde';
         meta.appendChild(name);
 
-        const details = [review.service, review.city, review.date]
+        const details = [review.service, review.display_city, review.published_date]
           .map(escapeText)
           .filter(Boolean);
         if (details.length) {
