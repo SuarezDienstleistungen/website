@@ -61,3 +61,71 @@ if (promoModal) {
     }
   });
 }
+
+
+// Öffentliche Kundenbewertungen.
+// Die Datei reviews.json enthält ausschließlich bereits freigegebene öffentliche Daten.
+const reviewsGrid = document.getElementById('reviewsGrid');
+const reviewsEmpty = document.getElementById('reviewsEmpty');
+
+if (reviewsGrid && reviewsEmpty) {
+  const escapeText = (value) => String(value ?? '').trim();
+
+  fetch('reviews.json', { cache: 'no-store' })
+    .then((response) => {
+      if (!response.ok) throw new Error('Bewertungen konnten nicht geladen werden.');
+      return response.json();
+    })
+    .then((data) => {
+      const reviews = Array.isArray(data.reviews) ? data.reviews : [];
+      const published = reviews.filter((review) =>
+        review &&
+        review.status === 'published' &&
+        Number.isInteger(review.rating) &&
+        review.rating >= 1 &&
+        review.rating <= 5 &&
+        typeof review.text === 'string' &&
+        review.text.trim().length > 0
+      );
+
+      if (!published.length) return;
+
+      reviewsEmpty.hidden = true;
+      reviewsGrid.replaceChildren();
+
+      published.forEach((review) => {
+        const article = document.createElement('article');
+        article.className = 'review-public-card';
+
+        const stars = document.createElement('div');
+        stars.className = 'review-stars';
+        stars.setAttribute('aria-label', `${review.rating} von 5 Sternen`);
+        stars.textContent = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+
+        const quote = document.createElement('blockquote');
+        quote.textContent = escapeText(review.text);
+
+        const meta = document.createElement('div');
+        meta.className = 'review-public-meta';
+
+        const name = document.createElement('strong');
+        name.textContent = escapeText(review.display_name) || 'Kundin / Kunde';
+        meta.appendChild(name);
+
+        const details = [review.service, review.city, review.date]
+          .map(escapeText)
+          .filter(Boolean);
+        if (details.length) {
+          const detailLine = document.createElement('span');
+          detailLine.textContent = details.join(' · ');
+          meta.appendChild(detailLine);
+        }
+
+        article.append(stars, quote, meta);
+        reviewsGrid.appendChild(article);
+      });
+    })
+    .catch(() => {
+      // Bei einem Ladefehler bleibt bewusst nur der neutrale Leerzustand sichtbar.
+    });
+}
