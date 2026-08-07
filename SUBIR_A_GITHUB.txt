@@ -1,0 +1,38 @@
+SUAREZ DIENSTLEISTUNGEN — RESEÑAS
+
+Objetivo:
+Activar https://suarezdienst.de/review/ y mostrar en la página principal únicamente reseñas reales publicadas.
+
+EN GITHUB (repositorio SuarezDienstleistungen/website, rama main):
+
+1. REEMPLAZAR estos archivos de la raíz:
+   - index.html
+   - styles.css
+   - script.js
+
+2. AÑADIR este archivo en la raíz:
+   - reviews.json
+
+3. AÑADIR la carpeta completa:
+   - review/
+     - index.html
+     - review.css
+     - review.js
+
+NO TOCAR:
+   - CNAME
+   - DNS
+   - Settings > Pages
+   - assets/
+   - formularios existentes
+
+Después del commit, esperar a que GitHub Pages muestre el deployment en verde.
+
+Comprobación:
+   https://suarezdienst.de/review/
+
+El formulario envía actualmente las respuestas al Formspree ya configurado en la web.
+La conexión automática con CEO Office/Claridad se hará en el siguiente paso; por ahora las reseñas NO se publican automáticamente.
+
+Regla de autenticidad:
+Solo se añadirá a reviews.json una reseña realmente enviada por un cliente y autorizada para publicación.

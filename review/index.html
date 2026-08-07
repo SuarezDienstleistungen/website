@@ -24,13 +24,6 @@
       <a class="home-link" href="../">Startseite</a>
     </header>
 
-    <section class="success-card invitation-card" id="invitationCard" hidden>
-      <div class="eyebrow">Persönliche Einladung</div>
-      <h1>Bewertungen nur nach ausgeführtem Auftrag.</h1>
-      <p>Dieser Bereich ist für Kundinnen und Kunden vorgesehen, die von Suarez Dienstleistungen persönlich um eine Bewertung gebeten wurden.</p>
-      <a class="submit-button link-button" href="../">Zur Startseite</a>
-    </section>
-
     <section class="review-card" id="reviewCard">
       <div class="eyebrow">Ihre Erfahrung</div>
       <h1>Vielen Dank für Ihr Vertrauen.</h1>
@@ -38,7 +31,6 @@
 
       <form id="reviewForm" action="https://formspree.io/f/xrenakak" method="POST" accept-charset="UTF-8">
         <input type="hidden" name="formular_typ" value="Kundenbewertung">
-        <input type="hidden" name="token" id="tokenField" value="">
         <input type="hidden" name="bewertung" id="ratingField" value="">
         <input type="hidden" name="_subject" value="Neue Kundenbewertung – Suarez Dienstleistungen">
         <input type="hidden" name="_next" value="https://suarezdienst.de/review/?sent=1">
@@ -62,6 +54,10 @@
             <input type="text" name="name" maxlength="80" autocomplete="name" placeholder="Ihr Name">
           </label>
           <label>
+            <span>E-Mail <small>(wird nicht veröffentlicht)</small></span>
+            <input type="email" name="email" maxlength="120" autocomplete="email" placeholder="ihre@email.de" required>
+          </label>
+          <label>
             <span>Ort <small>(optional)</small></span>
             <input type="text" name="ort" maxlength="80" autocomplete="address-level2" placeholder="z. B. Dresden">
           </label>
@@ -83,6 +79,10 @@
           <label class="check-row">
             <input type="checkbox" name="ort_veroeffentlichen" value="Ja">
             <span>Mein Ort darf zusammen mit der Bewertung veröffentlicht werden.</span>
+          </label>
+          <label class="check-row required-consent">
+            <input type="checkbox" name="veroeffentlichung" value="Erlaubt" required>
+            <span>Ich bin damit einverstanden, dass meine Bewertung nach Prüfung auf suarezdienst.de veröffentlicht werden darf.</span>
           </label>
           <label class="check-row required-consent">
             <input type="checkbox" name="datenschutz" value="Akzeptiert" required>
